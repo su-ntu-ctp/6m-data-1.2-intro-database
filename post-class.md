@@ -64,4 +64,6 @@ A deeper look at ON DELETE CASCADE vs ON DELETE SET NULL.
 ### ** Self-Study Assignment: The Music Streamer**
 
 Design a schema for a Spotify-clone. How do you handle a "Many-to-Many" relationship between Songs and Playlists?  
-(Hint: You will need a "Junction Table" in the middle\!)
+(Hint: You will need a "Junction Table" in the middle\!) 
+
+## **💡Please Share Your Answers & Thoughts in Discord💡**
