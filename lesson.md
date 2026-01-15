@@ -178,7 +178,7 @@ Ref: accidents.car_id > cars.id
 </details>
 
 
-### **🟢 Activity 2.2.2 Workshop: School System (10 Mins)**
+### **🟢 Workshop 2.2.2 : School System (10 Mins)**
 
 Construct an ERD for a school system whose classes have students and teachers. Each student belongs to a single class. Each teacher may teach more than one class, and each class may have more than one teacher.
 
@@ -270,7 +270,7 @@ To fix this, we need to split the table into two tables: `Orders` and `OrderLine
 
 We have a messy table called `OrderLineItems`. It violates 3NF because `ItemName` and `ItemPrice` depend on `ItemID`, not on the specific order. This is a transitive dependency. A transitive dependency is when one or more columns in a table depend on a non-key column in that table.
 
-**Workshop 3.2.3: Let's break `OrderLineItems` into two tables: `OrderLineItems` and `Items`.**
+### **🟢 Workshop 3.2.3: Let's break `OrderLineItems` into two tables: `OrderLineItems` and `Items`.**
 
 > Using [dbdiagram.io](https://dbdiagram.io/d), learners decompose this into two clean tables: OrderLineItems and Items.
 
@@ -298,7 +298,7 @@ We have a messy table called `OrderLineItems`. It violates 3NF because `ItemName
 
   <summary>Click here to view solution</summary>
 
-#### **Workshop 3.2.3**
+#### **🟢 Workshop 3.2.3**
 
 ```dbml
 // 1. The "Master" List of Products
