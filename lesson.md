@@ -189,7 +189,7 @@ Each entity has the following attributes:
 > - Class: id, name, teacher_id
 
 * Write the DBML to create the ERD.
-* Submit your code in Discord Peer-Review Channel: https://discord.com/channels/1165846570177150996/1457586759667028094
+* Submit your code in Discord Peer-Review Channel.
 
 ---
 ## **🔵 Section 3: Organizing Your Data (Like Tidying Your Home)**
