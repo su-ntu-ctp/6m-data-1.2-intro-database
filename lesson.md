@@ -1,4 +1,4 @@
-# 📚 Lesson 1.2: Data Modeling & Schema Design
+# 📚 Lesson 1.2: Intro to Database
 
 ## Before This Lesson
 

@@ -1,4 +1,4 @@
-# 📚 Pre-Class: Data Modeling & Schema Design
+# 📚 Pre-Class: Intro to Database
 
 **Estimated Time:** 30–45 minutes
 **Prerequisites:** Lesson 1.1 — The Data Landscape
