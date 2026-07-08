@@ -37,7 +37,7 @@ Analyse the differences between Relational, NoSQL, and Vector databases to selec
 
 ### Concept Overview
 
-Since you know Python, you know how to store data in variables. But what happens when you turn the computer off? The data is gone.
+If you've written a little Python (or any code), you may have noticed that data lives in variables while a program runs. But what happens when you turn the computer off? The data is gone.
 
 To persist data, we need a Database. But not all data is created equal — you wouldn't use a spreadsheet to store a 4K movie, and you wouldn't use a video player to calculate your taxes.
 
@@ -92,11 +92,17 @@ The glue that holds this blueprint together is the **ID**.
 
 **The Keys:**
 
-1. **Primary Key (PK):** The unique NRIC number of a row.
+1. **Primary Key (PK):** The unique ID of a row. Think of it like your **Passport Number** — every person in the system has one, and no two are the same. It distinguishes "John Smith (ID: 1)" from "John Smith (ID: 2)".
    - *Rule:* It creates identity. If two rows have the same PK, the database throws an error.
 
-2. **Foreign Key (FK):** The reference pointing to someone else's PK.
+2. **Foreign Key (FK):** A reference to someone else's Primary Key. Think of it like your **Passport Number written on a Flight Manifest** — the manifest doesn't copy your whole passport, it just holds a reference that points back to you.
    - *Rule:* It creates relationships — "I belong to that person over there."
+
+**How to read DBML** — three things to know before you paste the code below:
+
+- Words like `int` and `varchar` simply say what kind of value a column holds (a whole number, a short piece of text).
+- `[pk, increment]` means "this column is the Primary Key, and the database numbers the rows automatically 1, 2, 3…" — you never type the IDs yourself.
+- `Ref: cars.customer_id > customers.id` draws the arrow between two tables. Read the `>` as "many cars belong to one customer."
 
 ### 🛠️ Activity 2.1: Code-Along — Car Insurance Schema (15 min)
 
@@ -245,6 +251,8 @@ Evaluate a raw, un-normalized dataset and decompose it into a 3rd Normal Form (3
 
 **"Every fact should be about the key, the whole key, and nothing but the key."**
 
+One reassurance before we dive in: **you don't need to memorise the 1NF/2NF/3NF numbers** — you need the instinct behind them: *each fact should live in exactly one place*. The rules below are just three flavours of that one idea.
+
 ---
 
 #### Rule 1 (1NF): One Item Per Space — "No Grocery Bags in Cells"
@@ -314,7 +322,11 @@ Now changing Alice's name means updating **one cell** in the Students table — 
 | E002 | Bob | D10 | Sales | John Smith |
 | E003 | Carol | D20 | Marketing | Jane Doe |
 
-**What's wrong?** Department Name and Manager depend on Department Code, not directly on Employee ID. This is a "transitive dependency":
+**What's wrong?** Look at Alice's row. It's supposed to be about *Alice* — but it also carries facts about her *department*: the department's name and its manager. Those facts aren't really about Alice; they got dragged along for the ride because Alice happens to work in Sales. The cost shows up the moment something changes: if the Sales manager changes from John Smith to someone new, you'd have to edit the row of **every single Sales employee**. The fix is to give departments their own table, so each department fact is written down exactly once.
+
+*(The formal name for "a fact that got dragged along" is a **transitive dependency** — the instinct matters more than the term.)*
+
+In arrow notation, the chain looks like this:
 
 ```
 Employee ID → Department Code → Department Name
