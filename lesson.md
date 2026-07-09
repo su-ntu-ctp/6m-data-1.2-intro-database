@@ -49,7 +49,7 @@ To persist data, we need a Database. But not all data is created equal — you w
 | **NoSQL** | **Flexible & Fast.** Think of it like a messy desk — throw documents anywhere, find them fast. | Social Media feeds, Chat logs, IoT sensor data | MongoDB, Cassandra |
 | **Vector** | **Semantic & AI.** Think of it like a brain association game — "King" is close to "Queen". | Image search, LLM Memory, Recommendation engines | Pinecone, Weaviate |
 
-### 🛠️ Activity 1: The Sorting Game (10 min)
+### 🛠️ Activity 1: The Sorting Game (Slido: 10 min)
 
 "I am the CEO of a new Startup. I have 4 features I need to build. Tell me which database type I should use and WHY."
 
