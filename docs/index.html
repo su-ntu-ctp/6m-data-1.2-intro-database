@@ -394,6 +394,24 @@
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
         }
 
+        /* FAQ / Callout Box */
+        .faq-box {
+            background: #FEF3C7;
+            border-left: 4px solid #F59E0B;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-top: 16px;
+            text-align: left;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .faq-box .faq-question {
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
         /* Dependency Arrows */
         .dependency-diagram {
             position: relative;
@@ -651,9 +669,9 @@
                         <div class="card card-1nf">
                             <div class="card-icon">&#128203;</div>
                             <div class="card-title">1NF</div>
-                            <div class="card-subtitle">"No Lists"</div>
+                            <div class="card-subtitle">"Atomic Values + Unique Rows"</div>
                             <div class="card-description">
-                                Each cell contains a single value. No comma-separated lists like "Apple, Banana, Pear". Each row must be unique.
+                                Two rules: (1) Each cell contains a single, atomic value — no comma-separated lists like "Apple, Banana, Pear". (2) Every row is uniquely identifiable, usually via a primary key. A table can pass rule 1 and still fail 1NF if rows aren't uniquely identifiable.
                             </div>
                         </div>
                         <div class="card card-2nf">
@@ -800,6 +818,10 @@
                     </div>
                     <div class="key-message">
                         Now every row is uniquely identified by (OrderID, LineNumber)
+                    </div>
+                    <div class="faq-box">
+                        <div class="faq-question">&#129300; Why not just use (OrderID, ItemID) as the key instead of adding LineNumber?</div>
+                        In this sample data, (OrderID, ItemID) happens to be unique too — no order repeats the same item. But that only holds because of a business assumption: no order contains the same item twice. If a customer could add the same item to an order as two separate lines (e.g. different gift-wrap options), (OrderID, ItemID) would collide and 1NF would break again. LineNumber is a <strong>surrogate key</strong> — it identifies "the nth item on this order" regardless of what's in it, so it stays valid even if that business rule changes. This is why real order systems almost always use a surrogate line/row ID instead of building the key out of business data.
                     </div>
                 </div>
             </div>
