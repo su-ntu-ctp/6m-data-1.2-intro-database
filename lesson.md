@@ -88,7 +88,7 @@ Apply the concepts of Primary Keys and Foreign Keys to create a logical Entity-R
 
 Before we write SQL queries, we need a map. An Architect draws a blueprint before the construction crew lays bricks. An **ERD (Entity Relationship Diagram)** is our blueprint.
 
-![Drawing an ERD in dbdiagram.io](assets/dbdiagram.gif)
+![Drawing an ERD in dbdiagram.io](./assets/dbdiagram.gif)
 
 The glue that holds this blueprint together is the **ID**.
 
