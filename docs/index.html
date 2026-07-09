@@ -950,7 +950,7 @@
                         </div>
                     </div>
                     <div class="key-message">
-                        Now each column depends on the WHOLE primary key of its table!
+                        The partial dependency is fixed — CustomerID/CustomerName/OrderDate now depend on the WHOLE Orders key. But look closely at OrderLineItems: ItemName and ItemPrice still depend on ItemID, not on (OrderID, LineNumber). That's a different problem — 3NF, coming up next!
                     </div>
                 </div>
             </div>
