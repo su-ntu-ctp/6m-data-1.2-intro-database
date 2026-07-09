@@ -179,7 +179,7 @@ Ref: accidents.car_id > cars.id
 
 </details>
 
-### 🛠️ Activity 2.2: School System Workshop (15 min)
+### 🛠️ Activity 2.2: School System Workshop (Breakout Room: 15 min)
 
 Construct an ERD for a school system whose classes have students and teachers. Each student belongs to a single class. Each teacher may teach more than one class, and each class may have more than one teacher.
 
@@ -244,10 +244,6 @@ Ref: class_teachers.teacher_id > teachers.id
 Evaluate a raw, un-normalized dataset and decompose it into a 3rd Normal Form (3NF) schema to reduce data redundancy.
 
 ### Concept Overview
-
-> ### 🖥️ Start Here: Interactive Visualization
-> **Before reading the explanations below, open the [Normalization Interactive Visualization](https://su-ntu-ctp.github.io/6m-data-1.2-intro-database/) in your browser.**
-> It's an 8-step guided tour that animates exactly what happens when you normalize a table. Going through it first will make the written explanations much easier to follow.
 
 **The Coffee Shop Story:** Every time you buy coffee, the cashier writes your complete home address on each paper slip. If you move, they'd need to update hundreds of receipts. This is an "Update Anomaly" — changing one fact forces updates in many places.
 
@@ -475,6 +471,10 @@ Denormalization is common in read-heavy systems like analytics dashboards or dat
 An **Update Anomaly** happens when you change one fact and have to hunt down multiple rows to update it everywhere it appears. Normalization prevents this by ensuring each fact lives in exactly one place. For example, if a customer's phone number is stored in one row of a `customers` table (not repeated across every order row), you only ever update one cell — and it's automatically reflected everywhere that customer is referenced.
 
 </details>
+
+> ### 🖥️ Review: Interactive Visualization
+> **Now that you've worked through the normalization activities by hand, open the [Normalization Interactive Visualization](https://su-ntu-ctp.github.io/6m-data-1.2-intro-database/) in your browser.**
+> It's an 8-step guided tour that animates the exact same OrderDetails → Customers/Products/Orders/Order Line Items breakdown you just did in Activity 3. Use it to review and confirm your understanding of the 1NF/2NF/3NF process end-to-end.
 
 ---
 
