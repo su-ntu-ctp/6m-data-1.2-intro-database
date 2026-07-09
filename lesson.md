@@ -145,7 +145,7 @@ Table cars {
 
   // FOREIGN KEY: This is the critical link.
   // It holds the ID of the customer who owns this car.
-  customer_id int
+  customer_id int [not null]
 }
 
 // --- 3. Define the Link (Relationship) ---
